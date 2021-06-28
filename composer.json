@@ -1,0 +1,55 @@
+{
+    "name": "davealex/laravel-twilio",
+    "description": "A simple to integrate/customize wrapper on the PHP implementation of Twilio service",
+    "keywords": [
+        "davealex",
+        "laravel-twilio"
+    ],
+    "homepage": "https://github.com/davealex/laravel-twilio",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David Abiola",
+            "email": "daveabiola@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^6.0|^8.0",
+        "twilio/sdk": "^6.20"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Davealex\\LaravelTwilio\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Davealex\\LaravelTwilio\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Davealex\\LaravelTwilio\\LaravelTwilioServiceProvider"
+            ],
+            "aliases": {
+                "LaravelTwilio": "Davealex\\LaravelTwilio\\LaravelTwilioFacade"
+            }
+        }
+    }
+}
